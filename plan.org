@@ -8,6 +8,22 @@ Lotname, wafernumber, test-session, coordinate (x,y), parameter, value, min-max 
 ** Setup
 *** Cluster
 *** 5 nodes
+**** create topic
+inside the kafka_1 docker, run the following to create a topic in $KAFKA_HOME/bin
+
+./kafka-topics.sh --zookeeper 172.17.0.2:2181 --create --topic franz --partitions 2 --replication-factor 2
+
+**** test if it works
+inside the kafka_1 docker, start a producer in $KAFKA_HOME/bin
+
+/kafka-console-producer.sh --topic=franz --broker-list=localhost:9092
+
+and start a consume (in another shell)
+
+./kafka-console-consumer.sh --topic=franz --zookeeper=172.17.0.2:2181
+
+Type a sentence in the window of the producer, press enter, and watch it appears in the console of the consumer :-)
+
 *** script to introduce failures
 *** demo on devoxx
 *** Gregory
