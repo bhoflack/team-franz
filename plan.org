@@ -1,0 +1,18 @@
+* Kafka
+** Produce
+*** Format
+Lotname, wafernumber, test-session, coordinate (x,y), parameter, value, min-max (optional)
+=> JSON
+*** Create a generator
+*** Louis
+** Setup
+*** Cluster
+*** 5 nodes
+*** script to introduce failures
+*** demo on devoxx
+*** Gregory
+*** Lien
+*** Brecht
+** Consume
+*** test synchronicity
+*** multi consumers
